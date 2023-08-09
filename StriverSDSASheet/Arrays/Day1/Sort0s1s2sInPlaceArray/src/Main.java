@@ -18,40 +18,40 @@ public class Main {
 
     public int[] bruteforce (int[] arr) {
 
-      int c0 = 0;
-      int c1 = 0;
-      int c2 = 0;
+        int c0 = 0;
+        int c1 = 0;
+        int c2 = 0;
 
-      // first iteration we go and find out the counts of 0's, 1's and 2's
-      for (int i = 0; i < arr.length; i++){
+        // first iteration we go and find out the counts of 0's, 1's and 2's
+        for (int i = 0; i < arr.length; i++){
 
-          if(arr[i] == 0){
-              c0++;
-          }
-          else if(arr[i] == 1){
-              c1++;
-          }
-          else {
-              c2++;
-          }
+            if(arr[i] == 0){
+                c0++;
+            }
+            else if(arr[i] == 1){
+                c1++;
+            }
+            else {
+                c2++;
+            }
 
-      }
+        }
 
-      for(int i = 0; i < c0; i++){
-          arr[i] = 0;
-      }
+        for(int i = 0; i < c0; i++){
+            arr[i] = 0;
+        }
 
-      for(int i = c0; i < c0+c1; i++){
+        for(int i = c0; i < c0+c1; i++){
             arr[i] = 1;
-      }
+        }
 
-      for(int i = c0+c1; i < arr.length; i++){
+        for(int i = c0+c1; i < arr.length; i++){
             arr[i] = 2;
-      }
+        }
 
-      return arr;
+        return arr;
 
-      //TC is  O(N)
+        //TC is  O(N)
     }
 
     public ArrayList<Integer> optimal(ArrayList<Integer> arr){
@@ -94,13 +94,13 @@ public class Main {
 
             else{
 
-              // swap arr[mid] and arr[high]
+                // swap arr[mid] and arr[high]
 
-              int temp = arr.get(high);
-              arr.set(high,arr.get(mid));
-              arr.set(mid,temp);
+                int temp = arr.get(high);
+                arr.set(high,arr.get(mid));
+                arr.set(mid,temp);
 
-              high--;
+                high--;
 
             }
         }
@@ -108,4 +108,4 @@ public class Main {
         return arr;
     }
 
-    }
+}
